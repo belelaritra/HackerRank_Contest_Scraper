@@ -8,16 +8,19 @@ In Terminal:
 - Run `pip install selenium`
 - Run `pip install pyperclip` 
 
-##Downloads:
+## Downloads:
+
 - [ChromeDriver](https://chromedriver.chromium.org/downloads)
 
-##Procedure:
+
+## Procedure:
 
 Type `chrome://version` in Chrome Search Bar --> according to your chrome version Download [`ChromeDriver`](https://chromedriver.chromium.org/downloads) zip file --> Unzip (extract) the file to preferred location --> Copy the `path` 
 
 Open `HackerRank` --> Click on `Administration` --> Choose the `Contest` --> Click on `Challenges` --> Choose a `Challenge` --> Click on `View Submissions`--->Copy the `URL`
 
-##Changes :
+## Changes
+
 - Copy the `URL`  and Enter that in the terminal
 - Copy the Path of a folder and enter that in the terminal
 - Change the `__HackerRank Email Id___` with your `HackerRank login mail id`
