@@ -2,6 +2,10 @@
 Collects all accepted (partial and full scored) codes submitted within the given timeframe of any contest. 
 And saves them locally with a file name `<HackerRank_Id>.<language>` for plagiarism check.
 
+## Demo
+
+![alt-text](https://github.com/belelaritra/HackerRank_Contest_Scraper/blob/main/Gif/HackerRank_Scraper.gif)
+
 ## Installation
 
 In Terminal:
@@ -26,7 +30,6 @@ Open `HackerRank` --> Click on `Administration` --> Choose the `Contest` --> Cli
 - Change the `__HackerRank Email Id___` with your `HackerRank login mail id`
 - Change `___Password___` with with your `HackerRank Login Password`
 - Copy the Path of `chromedriver.exe` add `/chromedriver.exe` in the end and change with `____Chrome Driver Path_____`
-
 
 ## Please Help me to improve the code
 
