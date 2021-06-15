@@ -23,11 +23,11 @@ class Window:
 
     # Title
         root.title('HackerRank Contest Scraper')
-        
+
     # String variables for username, password and folder path
         username_var = tk.StringVar()
         password_var = tk.StringVar()
-        folder_path_var = tk.StringVar()
+        filename = tk.StringVar()
         contest_url_var = tk.StringVar()
 
     # defining a function that will get the name and password and print them on the screen
@@ -35,14 +35,25 @@ class Window:
             self.username = str(username_var.get())
             self.password = str(password_var.get())
             self.contest_url = str(contest_url_var.get())
-            
-            root.destroy()
+
+        # counts the number of blank strings
+            count = [self.username, self.password, self.contest_url, self.folder_path].count('')
+        # if a blank string is found
+            if count >= 1:
+                error_window = Toplevel(root)            
+                # sets the geometry of toplevel
+                error_window.geometry("200x100")
+                error_window.minsize(200, 100)
+                error_window.maxsize(200, 100)
+                # A Label widget to show in toplevel
+                Label(error_window, text ="Error!", padx = 30, pady = 90).pack()
+            else:
+                root.destroy()
 
         def browse_button():
             # Allow user to select a directory and store it folder_path
             filename = filedialog.askdirectory()
             self.folder_path = str(filename)
-
 
         #Frame
         F1 = LabelFrame(root, bd = 7, relief=GROOVE, bg="#2EC866")
