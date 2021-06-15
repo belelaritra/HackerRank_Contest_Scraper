@@ -33,4 +33,4 @@ Open `HackerRank` --> Click on `Administration` --> Choose the `Contest` --> Cli
 
 ## Please Help me to improve the code
 
-You can also add tkinter gui.
+You can also add tkinter or pyqt gui.
