@@ -4,11 +4,13 @@ import pyperclip as pc
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
+import tkinter_window
 
+tkw = tkinter_window.Window()
 
 #CREDENTIALS
-username = '___HackerRank Mail Id___'
-password = '___HackerRank Password___'
+username = tkw.username
+password = tkw.password
 
 #Language dict
 langauge_dict={'java8':'java',
@@ -18,8 +20,10 @@ langauge_dict={'java8':'java',
                 'python3':'py',}
 time.sleep(0.5)
 
-Code_path = input('Enter Folder Path Where You Want To Save Codes : ')
-Contest_URL = input('Enter the URL holding all Submissions of a specific question: ')
+Code_path = tkw.folder_path
+Contest_URL = tkw.contest_url
+
+print(username+'\n'+password+'\n'+Code_path+'\n'+Contest_URL)
 
 #PATH
 driver = webdriver.Chrome(r"___ChromeDriver Path___")
