@@ -2,37 +2,37 @@ import os
 import time
 import pyperclip as pc
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.keys import Keys 
 from selenium.webdriver.common.action_chains import ActionChains
+#Import File
 import tkinter_window
 
+#TKINTER
 tkw = tkinter_window.Window()
 
-#CREDENTIALS
+#Variable collected from Tkinter
 username = tkw.username
 password = tkw.password
-Code_path = tkw.folder_path
-Contest_URL = tkw.contest_url
+Contest = tkw.contest_url
 Problem = tkw.problem
+Code_path = tkw.folder_path
 
+print('Name: ' + username+'\nPassword: *****' +'\nContest Name: ' + Contest + '\nQuestion Name: '+Problem+'\nFolder Path: '+ Code_path)
 
-print('Name: ' + username+'\nPassword: *****' +'\nContest Name: ' + Contest_URL + '\nQuestion Name: '+Problem+'\nFolder Path: '+ Code_path)
-
-#Language dict
+#Language Dictionary
 langauge_dict={'java8':'java',
                 'java':'java',
                 'cpp':'cpp',
                 'c':'c',
                 'python3':'py',}
 
-
-#PATH
+#Chrome Driver PATH
 driver = webdriver.Chrome(r"___ChromeDriver Path___")
 
 #Mazimize current window
 driver.maximize_window()
 
-#1st URL
+#HackerRank Login page
 driver.get("https://www.hackerrank.com/auth/login?h_l=body_middle_left_button&h_r=login")
 
 #LOGIN ID, PASSWORD, ENTER
@@ -51,7 +51,7 @@ driver.find_element_by_xpath("//*[@id='content']/div/div/div/div/div[1]/nav/div/
 time.sleep(1)
 
 #Contest Number
-contest = driver.find_element_by_partial_link_text(Contest_URL)
+contest = driver.find_element_by_partial_link_text(Contest)
 contest_url = contest.get_attribute("href")
 driver.get(contest_url)
 time.sleep(2)
@@ -66,13 +66,16 @@ question_url = question.get_attribute("href")
 driver.get(question_url)
 time.sleep(1)
 
-#View Element
 try:
+#View Submissions
     driver.find_element_by_xpath("//*[@id='content']/div/div/section/div/div[2]/div[1]/div/div/aside/div/div[7]/p/a").click()
-    
-    length = len(driver.find_elements_by_xpath('//div[@class="pagination-wrap clearfix pagination-wrapper"]/div[@class="pagination"]/ul/li'))
-    page_no = int(length) - 3
+#Current Page URL   
+    Problem_URL = driver.current_url
+#Number Of Pages + 1
+    page_no = len(driver.find_elements_by_xpath("//a[@class='backbone']"))
+#Loop for Each Page
     for i in range(1,page_no):
+        #New Page Url
         driver.get(Problem_URL+ "/" + str(i))
         time.sleep(2)
 
@@ -112,26 +115,24 @@ try:
             if score_list[j] != "0":
                 filename = str(name_list[j]) + "." + str(langauge_dict[language_list[j]])
                 print(filename)
-
                 driver.get(result_list[j])
                 time.sleep(2)
-                
-                #code location
+#code location
                 text_box = driver.find_element_by_css_selector("span.cm-variable")
                 actions = ActionChains(driver)
                 actions.move_to_element(text_box)
                 actions.click()
                 time.sleep(2)
 
-                #COPY ALL
+#COPY ALL
                 actions.key_down(Keys.LEFT_CONTROL).send_keys("a").key_up(Keys.LEFT_CONTROL)
                 actions.key_down(Keys.LEFT_CONTROL).send_keys("c").key_up(Keys.LEFT_CONTROL)
                 actions.perform()
                 time.sleep(4)
-
+#Paste 
                 code = pc.paste()
-
-                name_with_path = os.path.join(folder_path, filename)
+#File Open (Write Mode) --> Choosed Path, File Name=Id.language
+                name_with_path = os.path.join(Code_path, filename)
                 file = open(name_with_path, 'w')
                 file.write(str(code))
                 file.close()
@@ -140,3 +141,5 @@ try:
                 pass
 except:
     print("You Have No Permission To View Submissions")
+
+driver.close()
