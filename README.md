@@ -33,7 +33,7 @@ Before:
 ```
 driver = webdriver.Chrome(r"___ChromeDriver Path___")
 ```
-After:
+After (Example):
 ```
 driver = webdriver.Chrome(r"C:\\Users\\user\\Downloads\\chromedriver.exe")
 ```
@@ -50,4 +50,4 @@ driver = webdriver.Chrome(r"C:\\Users\\user\\Downloads\\chromedriver.exe")
 
 - Enter `esc` key, to close the GUI.
 - Enter `tab` key to change the entry box.
-- Enter `Enter` key to click buttons & to change focus.
+- Enter `enter` key to click buttons & to change focus.
