@@ -1,5 +1,6 @@
 # HackerRank_Contest_Scraper
 Collects all accepted (partial and full scored) codes submitted within the given timeframe of any contest. 
+
 And saves them locally with a file name `<HackerRank_Id>.<language>` for plagiarism check.
 
 ## Demo
@@ -16,21 +17,26 @@ In Terminal:
 
 - [ChromeDriver](https://chromedriver.chromium.org/downloads)
 
-
 ## Procedure:
 
-Type `chrome://version` in Chrome Search Bar --> according to your chrome version Download [`ChromeDriver`](https://chromedriver.chromium.org/downloads) zip file --> Unzip (extract) the file to preferred location --> Copy the `path` 
-
-Open `HackerRank` --> Click on `Administration` --> Choose the `Contest` --> Click on `Challenges` --> Choose a `Challenge` --> Click on `View Submissions`--->Copy the `URL`
+> Type `chrome://version` in Chrome Search Bar 
+>> according to your chrome version Download [`ChromeDriver`](https://chromedriver.chromium.org/downloads) zip file 
+>>>  Unzip (extract) the file to your preferred location 
+>>>> Copy the `path` (Example: `C:\\Program Files (x86)\\ChromeDriver\\chromedriver.exe`)
 
 ## Changes
+- Copy the Path of `chromedriver.exe` add `\chromedriver.exe` in the end & change that with `____Chrome Driver Path_____`
 
-- Copy the `URL`  and Enter that in the terminal
-- Copy the Path of a folder and enter that in the terminal
-- Change the `__HackerRank Email Id___` with your `HackerRank login mail id`
-- Change `___Password___` with with your `HackerRank Login Password`
-- Copy the Path of `chromedriver.exe` add `\chromedriver.exe` in the end and change with `____Chrome Driver Path_____`
+## User Manual
+>Enter your `HackerRank Username or Email`
+>>Enter your `HackerRank Password`
+>>>Enter the `Contest Name` (Partial or Complete Name)
+>>>>Enter the `Question Name` (Partial or Complete Name) under that Contest
+>>>>>Choose the Path where you want to save all accepted files.
+>>>>>>Enter `Submit`
 
-## Please Help me to improve the code
+## Shortcut Keys
 
-You can also add tkinter gui.
+- Enter `esc` key, to close the GUI.
+- Enter `tab` key to change the entry box.
+- Enter `Enter` key to click buttons & to change focus.
