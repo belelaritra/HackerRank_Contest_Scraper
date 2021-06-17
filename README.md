@@ -20,7 +20,7 @@ In Terminal:
 ## Procedure:
 
 > Type `chrome://version` in Chrome Search Bar 
->> according to your chrome version Download [`ChromeDriver`](https://chromedriver.chromium.org/downloads) zip file 
+>> according to your chrome version and Operating System Download [`ChromeDriver`](https://chromedriver.chromium.org/downloads) zip file 
 >>>  Unzip (extract) the file to your preferred location 
 >>>> Copy the `path`
 
@@ -29,7 +29,14 @@ In Terminal:
 >>add `\chromedriver.exe` in the end  (Example: `C:\Users\user\Downloads\chromedriver.exe`)
 >>>and change that with `____Chrome Driver Path_____`
 
-(Example: `C:\\Users\\user\\Downloads\\chromedriver.exe`)
+Before:
+```
+driver = webdriver.Chrome(r"___ChromeDriver Path___")
+```
+After:
+```
+driver = webdriver.Chrome(r"C:\\Users\\user\\Downloads\\chromedriver.exe")
+```
 
 ## User Manual:
 >Enter your `HackerRank Username or Email`
