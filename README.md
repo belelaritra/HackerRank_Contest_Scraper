@@ -25,11 +25,11 @@ In Terminal:
 >>>> Copy the `path`
 
 ## Changes:
->Copy the Path of `chromedriver.exe`
->>add `\chromedriver.exe` in the end
+>Copy the Path of `chromedriver.exe`  (Example: `C:\Users\user\Downloads`)
+>>add `\chromedriver.exe` in the end  (Example: `C:\Users\user\Downloads\chromedriver.exe`)
 >>>and change that with `____Chrome Driver Path_____`
 
-(Example: `C:\\Program Files (x86)\\ChromeDriver\\chromedriver.exe`)
+(Example: `C:\\Users\\user\\Downloads\\chromedriver.exe`)
 
 ## User Manual:
 >Enter your `HackerRank Username or Email`
