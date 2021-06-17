@@ -41,14 +41,14 @@ class Window:
 
         # counts the number of blank strings
             count = [self.username, self.password, self.contest_url, self.problem, self.folder_path].count('')
-        # if a blank string is found
+        # If any Field is Empty
             if count >= 1:
                 error_window = Toplevel(root)            
-                # sets the geometry of toplevel
+                # Geometry of TopLevel
                 error_window.geometry("200x100+203+45")
                 error_window.minsize(200, 100)
                 error_window.maxsize(200, 100)
-                # A Label widget to show in toplevel
+                # A Label widget to show in toplevel(Pack)
                 Label(error_window, text ="⚠️ *Required field is empty",font=('Times',12, 'bold'),fg="Red", padx = 30, pady = 90).pack()
             else:
                 root.destroy()
@@ -71,7 +71,7 @@ class Window:
         username_entry.grid(row = 0, column = 1,padx = 15, pady=5)
 
         username_entry.config(fg='grey')
-        username_entry.insert(0,"Example: hackerrank@gmail.com")
+        username_entry.insert(0,"hackerrank@gmail.com")
 
 # creating a label and entry for password
         password_label = tk.Label(F1, text = 'Password', font = ('arial',11,'bold'),fg="BLACK",bg="#2EC866")
@@ -81,7 +81,7 @@ class Window:
         password_entry.grid(row = 1, column = 1,padx = 10, pady=5)
 
         password_entry.config(fg='grey')
-        password_entry.insert(0,"Example: 123456789")
+        password_entry.insert(0,"123456789")
 
 # creating a label and entry for contest url
         contest_label = tk.Label(F1, text = 'Contest Name', font = ('arial',11,'bold'),fg="BLACK",bg="#2EC866")
@@ -91,7 +91,7 @@ class Window:
         contest_entry.grid(row = 2, column = 1,padx = 10, pady=5)
 
         contest_entry.config(fg='grey')
-        contest_entry.insert(0,"Example: www.google.com")
+        contest_entry.insert(0,"Contest 1")
 
 # creating a label and entry for problem
         Problem_label = tk.Label(F1, text = 'Problem Name', font = ('arial',11,'bold'),fg="BLACK",bg="#2EC866")
@@ -101,7 +101,7 @@ class Window:
         Problem_entry.grid(row = 3, column = 1,padx = 10, pady=5)
 
         Problem_entry.config(fg='grey')
-        Problem_entry.insert(0,"Example: Question 1")
+        Problem_entry.insert(0,"Question_1")
 
 # creating a button for access save folder path
         folder_path_entry = tk.Button(F1, text = 'Choose Save Folder', command = browse_button,bd=4, font=("Arial", 10, "bold"))
@@ -120,25 +120,25 @@ class Window:
         
 
         def handle_focus_in_Username(_):
-            if username_entry.get() == 'Example: hackerrank@gmail.com':
+            if username_entry.get() == 'hackerrank@gmail.com':
                 username_entry.delete(0, tk.END)
                 username_entry.insert(0, '')
                 username_entry.config(fg='black')
      
         def handle_focus_in_pass(_):
-            if password_entry.get() == 'Example: 123456789':
+            if password_entry.get() == '123456789':
                 password_entry.delete(0, tk.END)
                 password_entry.insert(0, '')
                 password_entry.config(fg='black')
 
         def handle_focus_in_url(_):
-            if contest_entry.get() == 'Example: www.google.com':
+            if contest_entry.get() == 'Contest 1':
                 contest_entry.delete(0, tk.END)
                 contest_entry.insert(0, '')
                 contest_entry.config(fg='black')
 
         def handle_focus_in_problem(_):
-            if Problem_entry.get() == 'Example: Question 1':
+            if Problem_entry.get() == 'Question_1':
                 Problem_entry.delete(0, tk.END)
                 Problem_entry.insert(0, '')
                 Problem_entry.config(fg='black')
@@ -160,9 +160,6 @@ class Window:
             elif str(root.focus_get()) == '.!labelframe.!button2':
                 sub_btn.invoke()
             
-            #print("focus is:",str(root.focus_get()))
-            #print("return: event.widget is",str(event.widget))
-
         username_entry.bind("<FocusIn>", handle_focus_in_Username)
         password_entry.bind("<FocusIn>", handle_focus_in_pass)
         contest_entry.bind("<FocusIn>", handle_focus_in_url)
@@ -171,4 +168,3 @@ class Window:
         root.bind("<Return>", enterfocus)
 
         root.mainloop()
-  
