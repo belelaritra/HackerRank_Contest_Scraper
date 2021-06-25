@@ -13,7 +13,7 @@ In Terminal:
 - Run `pip install selenium`
 - Run `pip install pyperclip` 
 
-## Downloads:
+## Download:
 
 - [ChromeDriver](https://chromedriver.chromium.org/downloads)
 
